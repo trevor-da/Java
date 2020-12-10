@@ -1,0 +1,72 @@
+<html>
+<!--
+        Trevor Davey
+        Assignment 8 - Arrays - Series of Integers
+        December 4th,2020
+        This program and document will use a function to create an array with an open end for the user
+        to input whatever numbers they want and will then produce and print an output with all the negative
+        numbers given along with their sum followed by the same with positive numbers.
+    -->
+
+<head>
+    <title>Array Series of Integers</title>
+
+    <script>
+        //This is the function which will be used to create the formula for the integers to be calculated.
+        function Numbers() {
+
+            let numbers = new Array();
+
+
+            // This is the the prompt box which allows a user to input all the numbers that they want to of 
+            // both positive and negative numbers and then ask the user if they want to add another number
+
+            var keepGoing = true;
+            while (keepGoing) {
+                var number = parseFloat(prompt("Number?", ""));
+                numbers.push(number);
+                keepGoing = confirm("One more time?");
+            }
+            return numbers;
+
+        }
+        var numbers = Numbers();
+        // This shows the total number of numbers which were inputted by the user.
+        document.write("<p>The array length is " + numbers.length + "</p>");
+
+        var negNum = 0;
+        // Here is the loop which will give the total number of negative numbers inputted by user from the prompt box
+        for (let i = 0; i < numbers.length; i++) {
+
+            if (numbers[i] < 0) {
+                negNum += numbers[i];
+                document.write(numbers[i] + " , ");
+            }
+
+        }
+        //This will give the total sum of the neagtive numbers
+        document.write("<br> The sum of all negative Integers is: " + negNum + "<br>");
+
+        var posNum = 0;
+        // This is the loop which will give all of the positive numbers inputted by the user from the prompt box
+        for (let i = 0; i < numbers.length; i++) {
+
+            if (numbers[i] > 0) {
+                posNum += numbers[i];
+                document.write(numbers[i] + " , ");
+            }
+
+        }
+        // This prints the total sum of all the positive numbers the user inputted.
+        document.write("<br> The sum of all positive Integers is: " + posNum + "<br>");
+
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+<!--
+        Trevor Davey
+        Assignment 8 - Arrays - Analysis Function
+        December 4th,2020
+        This program and document will use a function to create an array of random numbers and then will
+        return those numbers as a list while giving the number of time the parameter showed up in that array.
+        It will print this all in a list after it has been returned and called to do so.
+    -->
+
+<head>
+    <title>Array Analysis Function</title>
+
+    <script>
+        // This function gives you the ability to find out how many numbers in the array are given from your inputted number by the user
+        function countOccurences(numArray, num) {
+
+            var count = 0;
+            for (var i = 0; i < numArray.length; i++) {
+                if (numArray[i] === num) {
+                    count++;
+                }
+
+            }
+            return count;
+        }
+        // This is the prompt box which will allow a user to input any random number
+        var num = parseInt(prompt("what number would you like to find in the array?", ""));
+        //This is the array of which the numbers will be used against the user input number
+        var Array = [1, 1, 3, 5, 1, 11, 1, 0, 8, 2];
+        //This is the print statement which gives you the number the user entered as well as the array from above along with how many times that number shows up in the array
+        document.write("The number of occurances of " + num + " in: [ " + Array + " ] is " + countOccurences(Array, num));
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
